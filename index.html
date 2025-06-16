@@ -1,0 +1,34 @@
+
+
+
+<!DOCTYPE html><html lang="en"><head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <title>MAHRAALPHABAY - </title> <!-- Favicon --> <link rel="icon" href="https://i.postimg.cc/zGBC6YLZ/IMG-2605.jpg" /> <style> * { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; font-family: 'Poppins', sans-serif; color: #00ff00; background: transparent; overflow: hidden; }
+canvas#matrix { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; background: black; }
+.overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: -1; }
+.container { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 60px 20px; height: 100%; overflow-y: auto; z-index: 1; position: relative; }
+.card { background: rgba(0, 0, 0, 0.3); /* transparent box */ border-radius: 20px; padding: 40px 30px; border: 1px solid #00ff00; text-align: center; max-width: 800px; width: 100%; backdrop-filter: blur(2px); animation: fadeIn 1.5s ease forwards; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.profile-pic { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid #00ff00; margin-bottom: 20px; }
+h1 { font-size: 2.5em; margin-bottom: 10px; }
+p { font-size: 1.1em; margin-bottom: 20px; line-height: 1.6; }
+.info-box { text-align: left; margin-top: 25px; }
+.info-box h2 { font-size: 1.5em; margin-bottom: 10px; border-bottom: 1px solid #00ff00; padding-bottom: 5px; }
+.info-box ul { list-style: none; padding: 0; line-height: 1.8; }
+.info-box ul li::before { content: "› "; color: #00ff00; }
+.telegram-btn, .whatsapp-btn { display: inline-block; margin: 15px 10px 0 10px; padding: 12px 25px; background: linear-gradient(135deg, #00ff00, #007f00); border: none; border-radius: 50px; color: black; font-size: 1.1em; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 0 10px #00ff00; }
+.telegram-btn:hover, .whatsapp-btn:hover { background: linear-gradient(135deg, #007f00, #00ff00); transform: scale(1.05); box-shadow: 0 0 20px #00ff00; }
+footer { margin-top: 40px; font-size: 0.9em; color: #00ff00; } </style></head><body>
+<!-- Matrix Background Canvas --><canvas id="matrix"></canvas><script> const canvas = document.getElementById("matrix"); const ctx = canvas.getContext("2d");
+canvas.height = window.innerHeight; canvas.width = window.innerWidth;
+const letters = "01"; const fontSize = 16; const columns = Math.floor(canvas.width / fontSize); const drops = Array.from({ length: columns }).fill(1);
+function drawMatrix() { ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; ctx.fillRect(0, 0, canvas.width, canvas.height);
+ctx.fillStyle = "#00ff00"; ctx.font = fontSize + "px monospace";
+for (let i = 0; i < drops.length; i++) { const text = letters.charAt(Math.floor(Math.random() * letters.length)); const x = i * fontSize; const y = drops[i] * fontSize;
+ctx.fillText(text, x, y);
+if (y > canvas.height && Math.random() > 0.975) { drops[i] = 0; }
+drops[i]++; } }
+setInterval(drawMatrix, 40);
+window.addEventListener("resize", () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });</script>
+<!-- Overlay --><div class="overlay"></div>
+<!-- Content --><div class="container"> <div class="card"> <img class="profile-pic" src="https://i.postimg.cc/zGBC6YLZ/IMG-2605.jpg" alt="Profile Picture" /> <h1>MAHRAOFFical</h1> <p>Hi! I'm MAHRA — a online seller lover and i build bots, websites, Telegram tools, and Hacking APKs. hater ke maa ke chuuu.</p>
+<div class="info-box"> <h2>About Me</h2> <ul> <li><strong>Country:</strong> Pakistan</li> <li><strong>Age:</strong> 18</li> <li><strong>School:</strong> High School</li> <li><strong>Hobbies:</strong> Coding, Gaming, Designing, Hacking</li> </ul> </div> https://https://t.me/itsmahra2/
